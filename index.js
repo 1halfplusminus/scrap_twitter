@@ -13,7 +13,6 @@ import puppeteer from "puppeteer";
   const cards = await page.evaluate((resultsSelector) => {
     return [...document.querySelectorAll(resultsSelector)]
       .map((anchor) => {
-        const card = anchor.textContent.trim();
         return {
           titre: anchor.querySelector("h3")?.textContent,
           stream: anchor.querySelector("p")?.textContent,
